@@ -1,4 +1,4 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
 import express, { urlencoded, json } from 'express';
 import logger from 'morgan';
 import router from './router/router';
@@ -6,6 +6,8 @@ import cors from 'cors';
 
 const app = express();
 const SERVER_PORT = 3001;
+
+dotenv.config();
 
 app.use(logger('dev'));
 app.use(cors());
