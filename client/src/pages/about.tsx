@@ -9,17 +9,9 @@ const AboutPage = () => {
       <Head>
         <title>메인페이지</title>
       </Head>
-      <div>
-        g111g
-        <div>
-          <Link href="/playground">
-            <a>go playground</a>
-          </Link>
-        </div>
-        <div>
-          <a href="/playground">go playground without link</a>
-        </div>
-      </div>
+      <Link href="/">
+        <a>go Home</a>
+      </Link>
     </>
   );
 };
