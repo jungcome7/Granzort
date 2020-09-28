@@ -1,12 +1,12 @@
 import { MainCategory, SubCategory, Book, Review, Quote } from '../../types/';
 
-const API_END_POINT = 3000;
+const API_END_POINT = 3001;
 
 export const getMainCategories = async () => {
   const res = await fetch(
     `http://localhost:${API_END_POINT}/api/main-category`
   );
-  const result: MainCategory[] = await res.json();
+  const result = await res.json();
   return result;
 };
 
