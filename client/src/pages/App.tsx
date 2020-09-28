@@ -8,25 +8,15 @@ const App = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h1>Counter {counter}</h1>
-      <button onClick={() => dispatch(increment())}>++++</button>
-      <button onClick={() => dispatch(decrement())}>----</button>
-      <h1>isLogged {isLogged + ''}</h1>
-    </div>
+    <>
+      <div>
+        <h1>Counter {counter}</h1>
+        <button onClick={() => dispatch(increment())}>++++</button>
+        <button onClick={() => dispatch(decrement())}>----</button>
+        <h1>isLogged {isLogged + ''}</h1>
+      </div>
+    </>
   );
 };
-
-// const App = () => {
-//   const [count, setCount] = useState(0);
-//   const [something, setSomething] = useState(false);
-//   const clickHandler = () => {
-//     setCount(count + 1);
-//   };
-//   useEffect(() => {
-//     setCount(count + 1);
-//   }, []);
-//   return <div onClick={clickHandler}>이것은 카운트 = {count}</div>;
-// };
 
 export default App;
