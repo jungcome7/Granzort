@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Head from 'next/head';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import allReducer from '../reducers';

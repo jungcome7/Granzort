@@ -7,7 +7,7 @@ const AboutPage = () => {
   return (
     <>
       <Head>
-        <title>메인페이지</title>
+        <title>어바웃파에지</title>
       </Head>
       <Link href="/">
         <a>go Home</a>
