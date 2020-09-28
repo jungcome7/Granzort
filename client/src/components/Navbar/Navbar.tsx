@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import './Navbar.module.scss'
+import * as S from './NavbarStyle';
 
 const Navbar = () => {
   return (
     <ul>
-      <li className='firstLi'>
-        <Link href="/">
-          <a className="home">Home</a>
-        </Link>
-      </li>
+        <li className="firstLi">
+          <Link href="/">
+            <a className="home">Home</a>
+          </Link>
+        </li>
       <li>
         <Link href="/about">
           <a>About</a>
