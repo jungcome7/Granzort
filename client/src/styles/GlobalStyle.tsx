@@ -7,7 +7,6 @@ ${reset}
 * {
     margin: 0px;
     box-sizing: border-box;
-    color: ${$BLACK};
   }
   html {
     /* max-width: 1000px; */

@@ -3,10 +3,10 @@ import * as S from './BookCardStyle';
 
 interface Props {}
 
-const BookCard: React.FC<Props> = ({}: Props) => {
+const BookCard: React.FC<Props> = ({data}: Props) => {
   return (
     <S.Container>
-      <S.Img src="http://image.kyobobook.co.kr/images/book/xlarge/345/x9788970134345.jpg" />
+      <S.Img src={data.imgSrc} />
     </S.Container>
   );
 };

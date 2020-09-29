@@ -16,7 +16,8 @@ const CategoryTab: React.FC<Props> = ({}: Props) => {
 
   const toggleCategoryList = () => {
     outsideClickHandler();
-    categoryListRef.current.style.display === 'none'
+    categoryListRef.current.style.display === 'none' ||
+    categoryListRef.current.style.display === ''
       ? (categoryListRef.current.style.display = 'block')
       : (categoryListRef.current.style.display = 'none');
   };

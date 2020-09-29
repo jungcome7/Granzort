@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Search from '@material-ui/icons/Search';
-import { $GRAY_001 } from '../../styles/color-variables';
+import Clear from '@material-ui/icons/Clear';
+import { $GRAY_001, $GRAY_006, $GRAY_008 } from '../../styles/color-variables';
 
 export const Container = styled.div`
   width: 300px;
@@ -14,18 +15,28 @@ export const Container = styled.div`
 `;
 
 export const SearchIcon = styled(Search)`
+  color: ${$GRAY_006};
   font-size: 16px;
+`;
+
+export const ClearIcon = styled(Clear)`
+  color: ${$GRAY_006};
+  font-size: 16px;
+  visibility: hidden;
+  cursor: pointer;
+  &:hover {
+    color: ${$GRAY_008};
+  }
 `;
 
 export const Input = styled.input`
   font-size: 16px;
-  width: 60px;
+  width: 100%;
   &::placeholder {
     text-align: center;
   }
 
   &:focus {
-    width: 100%;
     &::placeholder {
       text-align: start;
     }

@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import { $BLACK, $WHITE, $GRAY_001, $GRAY_005 } from '../../styles/color-variables';
+import {
+  $BLACK,
+  $WHITE,
+  $GRAY_001,
+  $GRAY_005,
+} from '../../styles/color-variables';
 
 export const Container = styled.div`
   position: relative;
+  width: 150px;
 `;
 
 export const SelectedCategoryContainer = styled.div`
@@ -28,7 +34,7 @@ export const CategoryList = styled.div`
   z-index: 1;
   background-color: ${$WHITE};
   width: 100%;
-  /* display:none; */
+  display:none;
 `;
 
 export const CategoryItem = styled.div`
@@ -36,7 +42,6 @@ export const CategoryItem = styled.div`
   font-weight: 600;
   overflow: hidden;
   padding: 5px;
-  /* border: 1px solid ${$GRAY_001}; */
   border-bottom: 2px solid ${$GRAY_005};
   cursor: pointer;
   &:hover {

@@ -2,17 +2,14 @@ import React from 'react';
 import * as S from './BookCardContainerStyle';
 import { BookCard } from '../BookCard';
 
-interface Props {}
+interface Props {
 
-const BookCardContainer: React.FC<Props> = ({}: Props) => {
+}
+
+const BookCardContainer: React.FC<Props> = ({data}: Props) => {
   return (
     <S.Container>
-      <BookCard />
-      <BookCard />
-      <BookCard />
-      <BookCard />
-      <BookCard />
-      <BookCard />
+        {data.map((dat:any) =>(<BookCard data={dat}/>))}
     </S.Container>
   );
 };
