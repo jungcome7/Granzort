@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import Link from 'next/link';
 import * as S from './SearchBarStyle';
 
 const SearchBar = () => {

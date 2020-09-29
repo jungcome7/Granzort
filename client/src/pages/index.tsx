@@ -8,7 +8,6 @@ const indexPage = () => {
     <>
       <Header />
       <SubHeader />
-      ggggg
     </>
   );
 };

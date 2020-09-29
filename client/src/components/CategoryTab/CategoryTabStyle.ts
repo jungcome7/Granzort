@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ExpandMore from '@material-ui/icons/ExpandMore';
+import { $BLACK } from '../../styles/color-variables';
 
 export const Container = styled.div`
   position: relative;
@@ -10,7 +11,7 @@ export const SelectedCategoryContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   padding: 5px;
-  border-bottom: 3px solid grey;
+  border-bottom: 3px solid ${$BLACK};
   cursor: pointer;
 `;
 
