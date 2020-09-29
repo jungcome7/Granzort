@@ -4,7 +4,7 @@ import NetworkWifi from '@material-ui/icons/NetworkWifi';
 import Person from '@material-ui/icons/Person';
 
 export const MainContainer = styled.div`
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid lightgray;
 `;
 
 export const Container = styled.div`
@@ -24,7 +24,7 @@ export const Logo = styled.p`
 `;
 
 export const IconContainer = styled.div`
-  width: 100px;
+  width: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
