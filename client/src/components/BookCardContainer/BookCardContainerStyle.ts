@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 30px 10px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
 `;

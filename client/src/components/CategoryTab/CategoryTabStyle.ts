@@ -11,7 +11,7 @@ export const SelectedCategoryContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   padding: 5px;
-  border-bottom: 3px solid ${$BLACK};
+  border-bottom: 2px solid ${$BLACK};
   cursor: pointer;
 `;
 
@@ -22,7 +22,8 @@ export const SelectedCategory = styled.div`
 
 export const ExpandMoreIcon = styled(ExpandMore)``;
 export const CategoryList = styled.div`
-  position: absolute;
+  position: fixed;
+  z-index: 2;
   /* display:none; */
 `;
 export const CategoryItem = styled.div``;

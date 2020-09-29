@@ -8,6 +8,7 @@ ${reset}
     margin: 0px;
     box-sizing: border-box;
     color: ${$BLACK};
+    overflow:hidden;
   }
   html {
     /* max-width: 1000px; */
