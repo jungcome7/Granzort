@@ -16,14 +16,14 @@ DEFAULT_STYLED_COMPONENT="export const Container = styled.div\`\`"
 echo `mkdir src/${FOLDER}/${FILE_NAME}`
 
 # index.ts
-echo `echo "export {default as ${FILE_NAME}} from './${FILE_NAME}'" > src/${FOLDER}/${FILE_NAME}/index.ts`
+echo `echo "export { default as ${FILE_NAME} } from './${FILE_NAME}'" > src/${FOLDER}/${FILE_NAME}/index.ts`
 
 # react file
 echo `echo "import React from 'react';
 import * as S from './${FILE_NAME}Style';
 
 interface Props {
-  
+
 }
 
 const ${FILE_NAME}: React.FC<Props> = ({} : Props) => {

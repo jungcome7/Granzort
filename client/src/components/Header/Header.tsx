@@ -9,7 +9,7 @@ const Header = () => {
         <S.Logo>지식의계보</S.Logo>
         <SearchBar />
         <S.IconContainer>
-          <S.NetworkWifiIcon />
+          <S.SignalWifi4BarIcon />
           <S.BarChartIcon />
           <S.PersonIcon />
         </S.IconContainer>

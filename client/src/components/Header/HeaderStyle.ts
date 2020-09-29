@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import BarChart from '@material-ui/icons/BarChart';
-import NetworkWifi from '@material-ui/icons/NetworkWifi';
+import SignalWifi4Bar from '@material-ui/icons/SignalWifi4Bar';
 import Person from '@material-ui/icons/Person';
 
 export const MainContainer = styled.div`
@@ -21,6 +21,7 @@ export const Logo = styled.p`
   color: grey;
   font-size: 20px;
   font-weight: 800;
+  cursor: pointer;
 `;
 
 export const IconContainer = styled.div`
@@ -30,6 +31,12 @@ export const IconContainer = styled.div`
   align-items: center;
 `;
 
-export const BarChartIcon = styled(BarChart)``;
-export const NetworkWifiIcon = styled(NetworkWifi)``;
-export const PersonIcon = styled(Person)``;
+export const BarChartIcon = styled(BarChart)`
+  cursor: pointer;
+`;
+export const SignalWifi4BarIcon = styled(SignalWifi4Bar)`
+  cursor: pointer;
+`;
+export const PersonIcon = styled(Person)`
+  cursor: pointer;
+`;
