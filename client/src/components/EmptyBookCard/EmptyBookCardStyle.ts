@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { $BLACK, $GRAY_001, $GRAY_002, $GRAY_006 } from '../../styles/color-variables';
+import {
+  $BLACK,
+  $GRAY_001,
+  $GRAY_002,
+  $GRAY_006,
+} from '../../styles/color-variables';
 import AddCircleOutline from '@material-ui/icons/AddCircleOutline';
 
 export const Container = styled.div`
@@ -10,14 +15,20 @@ export const Container = styled.div`
   height: 300px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px ${$GRAY_006};
-  
-  display:grid;
-  justify-content:center;
-  align-content:center;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
   &:hover {
     background-color: ${$GRAY_002};
   }
+
+  &:last-child {
+    color: ${$GRAY_006};
+    &:hover {
+      color: ${$BLACK};
+    }
+  }
 `;
 
-export const AddCircleOutlineIcon = styled(AddCircleOutline)`
-`
+export const AddCircleOutlineIcon = styled(AddCircleOutline)``;

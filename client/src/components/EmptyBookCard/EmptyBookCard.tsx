@@ -17,7 +17,7 @@ const EmptyBookCard: React.FC = () => {
 
   return (
     <S.Container>
-      <S.AddCircleOutlineIcon/>
+      <S.AddCircleOutlineIcon style={{fontSize: '30px'}}/>
     </S.Container>
   );
 };
