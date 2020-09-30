@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import { $GRAY_006 } from '../../styles/color-variables';
+import { $GRAY_001, $GRAY_006 } from '../../styles/color-variables';
 
 export const Container = styled.div`
   margin: 10px 2px;
   cursor: pointer;
-  background-color: black;
+  background-color: ${$GRAY_001};
   width: 220px;
+  height:300px;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px ${$GRAY_006};
+  box-shadow: 2px 2px 10px ${$GRAY_006};
 `;
 export const Img = styled.img`
   display: block;

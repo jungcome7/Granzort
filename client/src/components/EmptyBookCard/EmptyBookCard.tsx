@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import * as S from './BookCardStyle';
+import * as S from './EmptyBookCardStyle';
 import { getBooks } from '../../../apis/search';
 
 interface Props {}
 
-const BookCard: React.FC = () => {
+const EmptyBookCard: React.FC = () => {
   const gg = async () => {
     const a = await getBooks();
     console.log(a.documents);
@@ -17,9 +17,9 @@ const BookCard: React.FC = () => {
 
   return (
     <S.Container>
-      <S.Img />
+      <S.AddCircleOutlineIcon/>
     </S.Container>
   );
 };
 
-export default BookCard;
+export default EmptyBookCard;

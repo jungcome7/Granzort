@@ -6,10 +6,9 @@ interface Props {
 
 }
 
-const BookCardContainer: React.FC<Props> = ({data}: Props) => {
+const BookCardContainer: React.FC = () => {
   return (
     <S.Container>
-        {data.map((dat:any) =>(<BookCard data={dat}/>))}
     </S.Container>
   );
 };
