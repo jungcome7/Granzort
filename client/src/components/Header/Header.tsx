@@ -9,9 +9,15 @@ const Header = () => {
         <S.Logo>지식의계보</S.Logo>
         <SearchBar />
         <S.IconContainer>
-          <S.SignalWifi4BarIcon />
-          <S.BarChartIcon />
+          <Link href="/feed">
+            <S.SignalWifi4BarIcon />
+          </Link>
+          <Link href="/statistics">
+            <S.BarChartIcon />
+          </Link>
+          <Link href="/">
           <S.PersonIcon />
+          </Link>
         </S.IconContainer>
       </S.Container>
     </S.MainContainer>

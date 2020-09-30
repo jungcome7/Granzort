@@ -11,6 +11,7 @@ ${reset}
   html {
     /* max-width: 1000px; */
     /* margin: 0 auto; */
+    overflow-y: scroll;
   }
 
   body{

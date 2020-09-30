@@ -68,7 +68,7 @@ const indexPage = () => {
     <>
       <Header />
       <SubHeader />
-      <BookCardContainer data={data}/>
+      <BookCardContainer data={data} />
     </>
   );
 };
