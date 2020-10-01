@@ -20,6 +20,11 @@ export const ModalContent = styled.div`
   z-index: 1;
   opacity: 1;
   padding: 30px 20px;
+`;
+
+export const SearchBarContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+export const Test = styled.div``;

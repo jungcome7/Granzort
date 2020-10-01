@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const getBooks = async () => {
+export const fetchBooks = async (query:string) => {
   const res = await fetch(
-    `https://dapi.kakao.com/v3/search/book?target=authors&query=니체&size=10&page=1`,
+    `https://dapi.kakao.com/v3/search/book?&query=${query}&size=10&page=1`,
     {
       method: 'GET',
       headers: {

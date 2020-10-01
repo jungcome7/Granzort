@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Header } from '../components/Header';
 import { SubHeader } from '../components/SubHeader';
 import { EmptyBookCard } from '../components/EmptyBookCard';
@@ -11,15 +11,14 @@ const createPage: React.FC = () => {
 
   const openSearchModal = () => {
     setDisplaySearchModal(true);
-    console.log('clicked');
   };
-
-  useEffect(() => {}, [displaySearchModal]);
 
   return (
     <>
       {displaySearchModal && (
-        <BookSearchModal setDisplaySearchModal={setDisplaySearchModal} />
+        <BookSearchModal
+          setDisplaySearchModal={setDisplaySearchModal}
+        />
       )}
       <Header />
       <ContentLayout>
