@@ -3,8 +3,14 @@ import Search from '@material-ui/icons/Search';
 import Clear from '@material-ui/icons/Clear';
 import { $GRAY_001, $GRAY_006, $GRAY_008 } from '../../styles/color-variables';
 
-export const Container = styled.div`
-  width: 300px;
+interface ContainerProps {
+  width:string;
+  height:string;
+}
+
+export const Container = styled.div<ContainerProps>`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   padding: 5px;
   margin: 5px;
   border-radius: 5px;

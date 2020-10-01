@@ -1,7 +1,15 @@
 import React, { useRef } from 'react';
 import * as S from './SearchBarStyle';
 
-const SearchBar = () => {
+interface SearchBarProps {
+  width: string;
+  height: string;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({
+  width,
+  height,
+}: SearchBarProps) => {
   const inputRef = useRef<any>();
   const clearIconRef = useRef<any>();
 
@@ -22,7 +30,7 @@ const SearchBar = () => {
 
   return (
     <>
-      <S.Container onClick={ActivateInputForm}>
+      <S.Container onClick={ActivateInputForm} width={width} height={height}>
         <S.SearchIcon />
         <S.Input
           placeholder="Search"

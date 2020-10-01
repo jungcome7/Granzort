@@ -7,7 +7,7 @@ const Header = () => {
     <S.MainContainer>
       <S.Container>
         <S.Logo>지식의계보</S.Logo>
-        <SearchBar />
+        <SearchBar width="300px" height="34px" />
         <S.IconContainer>
           <Link href="/feed">
             <S.SignalWifi4BarIcon />
@@ -16,7 +16,7 @@ const Header = () => {
             <S.BarChartIcon />
           </Link>
           <Link href="/">
-          <S.PersonIcon />
+            <S.PersonIcon />
           </Link>
         </S.IconContainer>
       </S.Container>

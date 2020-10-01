@@ -6,16 +6,17 @@ interface Props {}
 const CategoryTab: React.FC<Props> = ({}: Props) => {
   const categoryListRef = useRef<any>();
 
-  const outsideClickHandler = () => {
-    window.addEventListener('click', (e: any) => {
-      if (!e.target.closest('.CategoryTab')) {
-        categoryListRef.current.style.display = 'none';
-      }
-    });
-  };
+  // const outsideClickHandler = () => {
+  //   window.addEventListener('click', (e: any) => {
+  //     if (!e.target.closest('.category-tab')) {
+  //       categoryListRef.current.style.display = 'none';
+  //       console.log(1)
+  //     }
+  //   });
+  // };
 
   const toggleCategoryList = () => {
-    outsideClickHandler();
+    // outsideClickHandler();
     categoryListRef.current.style.display === 'none' ||
     categoryListRef.current.style.display === ''
       ? (categoryListRef.current.style.display = 'block')
@@ -24,7 +25,7 @@ const CategoryTab: React.FC<Props> = ({}: Props) => {
 
   return (
     <>
-      <S.Container className="CategoryTab" onClick={toggleCategoryList}>
+      <S.Container className="category-tab" onClick={toggleCategoryList}>
         <S.SelectedCategoryContainer>
           <S.SelectedCategory>initial</S.SelectedCategory>
           <S.ExpandMoreIcon />

@@ -2,9 +2,13 @@ import React, { useEffect } from 'react';
 import * as S from './EmptyBookCardStyle';
 import { getBooks } from '../../../apis/search';
 
-interface Props {}
+interface EmptyBookCardProps {
+  openSearchModal: () => void;
+}
 
-const EmptyBookCard: React.FC = () => {
+const EmptyBookCard: React.FC<EmptyBookCardProps> = ({
+  openSearchModal,
+}: EmptyBookCardProps) => {
   const gg = async () => {
     const a = await getBooks();
     console.log(a.documents);
@@ -16,8 +20,8 @@ const EmptyBookCard: React.FC = () => {
   });
 
   return (
-    <S.Container>
-      <S.AddCircleOutlineIcon style={{fontSize: '30px'}}/>
+    <S.Container onClick={openSearchModal}>
+      <S.AddCircleOutlineIcon style={{ fontSize: '30px' }} />
     </S.Container>
   );
 };

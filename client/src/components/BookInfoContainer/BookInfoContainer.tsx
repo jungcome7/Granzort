@@ -3,12 +3,14 @@ import { BookInfo } from '../BookInfo';
 import { EmptyBookCard } from '../EmptyBookCard';
 import * as S from './BookInfoContainerStyle';
 
-interface Props {}
+interface Props {
+  openSearchModal: () => void;
+}
 
-const BookInfoContainer: React.FC<Props> = ({}: Props) => {
+const BookInfoContainer: React.FC<Props> = ({ openSearchModal }: Props) => {
   return (
     <S.Container>
-      <EmptyBookCard />
+      <EmptyBookCard openSearchModal={openSearchModal}/>
       <BookInfo />
     </S.Container>
   );
