@@ -15,10 +15,14 @@ export const Container = styled.div`
   height: 300px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px ${$GRAY_006};
-
-  display: grid;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  align-content: center;
+
+  /* grid */
+  align-self: center;
+  justify-self: center;
+
   &:hover {
     background-color: ${$GRAY_002};
   }
