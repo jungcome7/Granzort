@@ -16,7 +16,7 @@ interface BookInfoContainerProps {
     contents: string;
     isbn: string;
     price: number;
-    sales_price: number;
+    sale_price: number;
   };
 }
 
@@ -24,11 +24,12 @@ const BookInfoContainer: React.FC<BookInfoContainerProps> = ({
   openSearchModal,
   selectedBook,
 }: BookInfoContainerProps) => {
+  
   return (
     <S.Container>
       {selectedBook ? (
         <>
-          <BookCard thumbnail={selectedBook.thumbnail} />
+          <BookCard thumbnail={selectedBook.thumbnail} openSearchModal={openSearchModal}/>
           <BookInfo {...selectedBook} />
         </>
       ) : (

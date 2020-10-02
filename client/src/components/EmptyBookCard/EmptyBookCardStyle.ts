@@ -23,9 +23,9 @@ export const Container = styled.div`
   align-self: center;
   justify-self: center;
 
-  &:hover {
+  /* &:hover {
     background-color: ${$GRAY_002};
-  }
+  } */
 
   &:last-child {
     color: ${$GRAY_006};

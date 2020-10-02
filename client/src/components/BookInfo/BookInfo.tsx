@@ -11,7 +11,7 @@ interface Props {
   contents: string;
   isbn: string;
   price: number;
-  sales_price: number;
+  sale_price: number;
 }
 
 const BookInfo: React.FC<Props> = ({
@@ -21,7 +21,7 @@ const BookInfo: React.FC<Props> = ({
   publisher,
   datetime,
   price,
-  sales_price,
+  sale_price,
 }: Props) => {
   return (
     <S.Container>
@@ -31,7 +31,7 @@ const BookInfo: React.FC<Props> = ({
       <S.Publisher>{publisher}</S.Publisher>
       <S.PublishedDate>{datetime.split('T')[0]}</S.PublishedDate>
       <S.Price>{price}</S.Price>
-      <S.SalesPrice>{sales_price}</S.SalesPrice>
+      {sale_price > 0 && <S.SalesPrice>{sale_price}</S.SalesPrice>}
     </S.Container>
   );
 };
