@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { $WHITE, $GRAY_009 } from '../../styles/color-variables';
+import { $WHITE } from '../../styles/color-variables';
 
 export const Container = styled.div`
   position: fixed;
@@ -25,6 +25,16 @@ export const ModalContent = styled.div`
 export const SearchBarContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 `;
 
-export const Test = styled.div``;
+export const SearchedContentContainer = styled.div`
+  width: 620px;
+  height: 590px;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  margin: 0 auto;
+`;

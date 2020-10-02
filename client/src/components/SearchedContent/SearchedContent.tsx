@@ -26,13 +26,20 @@ const SearchedContent: React.FC<SearchedContentProps> = ({
 }: SearchedContentProps) => {
   return (
     <S.Container>
-      <S.Img src={thumbnail}>
-      </S.Img>
-      <S.Title>{title}</S.Title>
-      <S.Authors>{authors.join(', ')}</S.Authors>
-      {translators && <S.Translators>{translators.join(', ')}</S.Translators>}
-      <S.Publisher>{publisher}</S.Publisher>
-      <S.PublishedDate>{datetime.split('T')[0]}</S.PublishedDate>
+      {thumbnail ? (
+        <S.BookImg src={thumbnail} />
+      ) : (
+        <S.EmptyBookImg>
+          <S.MenuBookIcon style={{ fontSize: '30px' }} />
+        </S.EmptyBookImg>
+      )}
+      <S.BookInfo>
+        <S.Title>{title}</S.Title>
+        <S.Authors>{authors.join(', ')}</S.Authors>
+        {translators && <S.Translators>{translators.join(', ')}</S.Translators>}
+        <S.Publisher>{publisher}</S.Publisher>
+        <S.PublishedDate>{datetime.split('T')[0]}</S.PublishedDate>
+      </S.BookInfo>
     </S.Container>
   );
 };

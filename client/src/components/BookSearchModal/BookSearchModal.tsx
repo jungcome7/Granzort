@@ -14,7 +14,6 @@ const BookSearchModal: React.FC<BookSearchModalProps> = ({
   const [fetchedSearchData, setFetchedSearchData] = useState<
     SearchedContentProps[]
   >([]);
-
   const outsideClickHandler = (e: any) => {
     if (!e.target.closest('.modal-content')) {
       setDisplaySearchModal(false);
@@ -32,10 +31,12 @@ const BookSearchModal: React.FC<BookSearchModalProps> = ({
             setFetchedSearchData={setFetchedSearchData}
           />
         </S.SearchBarContainer>
-        {fetchedSearchData &&
-          fetchedSearchData.map((data) => (
-            <SearchedContent key={data.isbn} {...data} />
-          ))}
+        <S.SearchedContentContainer>
+          {fetchedSearchData &&
+            fetchedSearchData.map((data) => (
+              <SearchedContent key={data.isbn + Math.random()} {...data} />
+            ))}
+        </S.SearchedContentContainer>
       </S.ModalContent>
     </S.Container>
   );
