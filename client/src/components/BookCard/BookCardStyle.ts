@@ -6,9 +6,12 @@ export const Container = styled.div`
   cursor: pointer;
   background-color: ${$GRAY_001};
   width: 220px;
-  height:300px;
   border-radius: 10px;
   box-shadow: 2px 2px 10px ${$GRAY_006};
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  
 `;
 export const Img = styled.img`
   display: block;
