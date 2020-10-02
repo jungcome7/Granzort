@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import * as S from './BookSearchModalStyle';
 import { SearchBar } from '../SearchBar';
-import { fetchBooks } from '../../../apis/search';
+import { SearchedContent } from '../SearchedContent';
+import { SearchedContentProps } from '../SearchedContent/SearchedContent';
 
 interface BookSearchModalProps {
   setDisplaySearchModal: (display: boolean) => void;
@@ -10,7 +11,9 @@ interface BookSearchModalProps {
 const BookSearchModal: React.FC<BookSearchModalProps> = ({
   setDisplaySearchModal,
 }: BookSearchModalProps) => {
-  const [fetchedData, setFetchedData] = useState([]);
+  const [fetchedSearchData, setFetchedSearchData] = useState<
+    SearchedContentProps[]
+  >([]);
 
   const outsideClickHandler = (e: any) => {
     if (!e.target.closest('.modal-content')) {
@@ -19,20 +22,20 @@ const BookSearchModal: React.FC<BookSearchModalProps> = ({
   };
 
   return (
-    <S.Container onClick={outsideClickHandler}>
+    <S.Container onMouseDown={outsideClickHandler}>
       <S.ModalContent className="modal-content">
         <S.SearchBarContainer>
           <SearchBar
             width="600px"
             height="34px"
             autoFocus={true}
-            //   fetchBooksByInputValue={fetchBooksByInputValue}
-            setFetchedData={setFetchedData}
+            setFetchedSearchData={setFetchedSearchData}
           />
         </S.SearchBarContainer>
-        {fetchedData.map((v) => (
-          <S.Test>{v.title}</S.Test>
-        ))}
+        {fetchedSearchData &&
+          fetchedSearchData.map((data) => (
+            <SearchedContent key={data.isbn} {...data} />
+          ))}
       </S.ModalContent>
     </S.Container>
   );

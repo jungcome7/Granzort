@@ -4,12 +4,16 @@ import * as S from './HeaderStyle';
 import { SearchBar } from '../SearchBar';
 
 const Header = () => {
-  const [fetchedData, setFetchedData] = useState([]);
+  const [fetchedSearchData, setFetchedSearchData] = useState([]);
   return (
     <S.MainContainer>
       <S.Container>
         <S.Logo>지식의계보</S.Logo>
-        <SearchBar width="300px" height="34px" setFetchedData={setFetchedData}/>
+        <SearchBar
+          width="300px"
+          height="34px"
+          setFetchedSearchData={setFetchedSearchData}
+        />
         <S.IconContainer>
           <Link href="/feed">
             <S.SignalWifi4BarIcon />

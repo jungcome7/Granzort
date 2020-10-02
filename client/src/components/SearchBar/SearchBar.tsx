@@ -6,22 +6,22 @@ interface SearchBarProps {
   width: string;
   height: string;
   autoFocus?: boolean;
-  setFetchedData:(fetchedData:any) => void;
+  setFetchedSearchData: (fetchedData: any) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   width,
   height,
   autoFocus,
-  setFetchedData
+  setFetchedSearchData,
 }: SearchBarProps) => {
   const inputRef = useRef<any>();
   const clearIconRef = useRef<any>();
 
   const fetchBooksByInputValue = async (inputValue: any) => {
     const data = await fetchBooks(inputValue);
-    setFetchedData(data.documents)
-    console.log(data.documents)
+    setFetchedSearchData(data.documents);
+    console.log(data.documents);
   };
 
   const ActivateInputForm = () => {
@@ -37,6 +37,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const clearInputValue = () => {
     inputRef.current.value = '';
     clearIconRef.current.style.visibility = 'hidden';
+    setFetchedSearchData([]);
   };
 
   return (
@@ -46,10 +47,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
         <S.Input
           placeholder="Search"
           ref={inputRef}
-          onChange={(e:any) => {
+          onChange={(e: any) => {
             toggleClearButton();
-            // setFetchedData(e.target.value)
-            fetchBooksByInputValue(e.target.value);
+            e.target.value
+              ? fetchBooksByInputValue(e.target.value)
+              : setFetchedSearchData([]);
           }}
           autoFocus={autoFocus}
         ></S.Input>
