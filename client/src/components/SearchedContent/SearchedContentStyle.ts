@@ -15,6 +15,7 @@ export const Container = styled.div`
   background-color: ${$GRAY_000};
   border-radius: 10px;
   cursor: pointer;
+  user-select:none;
   &:hover {
     background-color: ${$GRAY_001};
     box-shadow: 2px 2px 5px ${$GRAY_004};

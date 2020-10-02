@@ -1,23 +1,14 @@
 import React, { useEffect } from 'react';
 import * as S from './BookCardStyle';
-import { getBooks } from '../../../apis/search';
 
-interface Props {}
+interface BookCardProps {
+  thumbnail: string;
+}
 
-const BookCard: React.FC = () => {
-  const gg = async () => {
-    const a = await getBooks();
-    console.log(a.documents);
-    return a;
-  };
-
-  useEffect(() => {
-    gg();
-  });
-
+const BookCard: React.FC<BookCardProps> = ({ thumbnail }: BookCardProps) => {
   return (
     <S.Container>
-      <S.Img />
+      <S.Img src={thumbnail}/>
     </S.Container>
   );
 };

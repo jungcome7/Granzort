@@ -8,6 +8,7 @@ import { BookSearchModal } from '../components/BookSearchModal';
 
 const createPage: React.FC = () => {
   const [displaySearchModal, setDisplaySearchModal] = useState(false);
+  const [selectedBook, setSelectedBook] = useState();
 
   const openSearchModal = () => {
     setDisplaySearchModal(true);
@@ -18,11 +19,12 @@ const createPage: React.FC = () => {
       {displaySearchModal && (
         <BookSearchModal
           setDisplaySearchModal={setDisplaySearchModal}
+          setSelectedBook={setSelectedBook}
         />
       )}
       <Header />
       <ContentLayout>
-        <BookInfoContainer openSearchModal={openSearchModal} />
+        <BookInfoContainer openSearchModal={openSearchModal} selectedBook={selectedBook}/>
       </ContentLayout>
     </>
   );

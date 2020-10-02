@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './SearchedContentStyle';
 
-export interface SearchedContentProps {
+interface SearchedContentProps {
   thumbnail: string;
   title: string;
   authors: string[];
@@ -14,18 +14,24 @@ export interface SearchedContentProps {
   sales_price: number;
   status: string;
   url: string;
+  setDisplaySearchModal: (displaySearchModal: boolean) => void;
+  setSelectedBook: (a: any) => void;
 }
 
 const SearchedContent: React.FC<SearchedContentProps> = ({
-  thumbnail,
-  title,
-  authors,
-  translators,
-  publisher,
-  datetime,
+  setDisplaySearchModal,
+  setSelectedBook,
+  ...data
 }: SearchedContentProps) => {
+  const selectBook = () => {
+    setDisplaySearchModal(false);
+    setSelectedBook(data);
+  };
+
+  const { thumbnail, title, authors, translators, publisher, datetime } = data;
+
   return (
-    <S.Container>
+    <S.Container onClick={selectBook}>
       {thumbnail ? (
         <S.BookImg src={thumbnail} />
       ) : (

@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BookInfo } from '../BookInfo';
+import { BookCard } from '../BookCard';
 import { EmptyBookCard } from '../EmptyBookCard';
 import * as S from './BookInfoContainerStyle';
 
-interface Props {
+interface BookInfoContainerProps {
   openSearchModal: () => void;
+  selectedBook:any;
 }
 
-const BookInfoContainer: React.FC<Props> = ({ openSearchModal }: Props) => {
+const BookInfoContainer: React.FC<BookInfoContainerProps> = ({
+  openSearchModal,
+  selectedBook
+}: BookInfoContainerProps) => {
   return (
     <S.Container>
-      <EmptyBookCard openSearchModal={openSearchModal}/>
+      {selectedBook ? (
+        <BookCard thumbnail={selectedBook.thumbnail}/>
+      ) : (
+        <EmptyBookCard openSearchModal={openSearchModal} />
+      )}
       <BookInfo />
     </S.Container>
   );
