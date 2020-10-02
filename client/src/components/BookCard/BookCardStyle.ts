@@ -22,27 +22,22 @@ export const Container = styled.div`
   justify-self: center;
   justify-content: center;
   align-items: center;
-  &:hover {
-    background-color: ${$GRAY_002};
-    opacity:0.6;
-  }
 
-  &:last-child {
-    color: ${$GRAY_006};
-    &:hover {
-      color: ${$BLACK};
-      opacity:1;
-    }
-  }
 `;
 
 export const Img = styled.img`
   display: block;
   border-radius: 10px;
   width: 100%;
+  z-index:1;
+  &:hover {
+    opacity: 0.1;
+  }
 `;
 export const MenuBookIcon = styled(MenuBook)`
   color: ${$GRAY_006};
+  /* z-index:1;
+  background-color: ${$GRAY_001}; */
 `;
 
 export const FindReplaceIcon = styled(FindReplace)`
@@ -50,5 +45,5 @@ export const FindReplaceIcon = styled(FindReplace)`
   display: flex;
   align-self: center;
   color: ${$GRAY_009};
-  /* visibility: hidden; */
+  opacity:1;
 `;
