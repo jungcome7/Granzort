@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import * as S from './SearchBarStyle';
 import { fetchBooks } from '../../apis/search';
 
@@ -6,6 +6,7 @@ interface SearchBarProps {
   width: string;
   height: string;
   autoFocus?: boolean;
+  fetchedSearchData: any;
   setFetchedSearchData: (fetchedData: any) => void;
 }
 
@@ -13,6 +14,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   width,
   height,
   autoFocus,
+  fetchedSearchData,
   setFetchedSearchData,
 }: SearchBarProps) => {
   const inputRef = useRef<any>();
@@ -40,9 +42,34 @@ const SearchBar: React.FC<SearchBarProps> = ({
     setFetchedSearchData([]);
   };
 
+  const outsideClickHandler = () => {
+    window.addEventListener('click', function clicked(e: any) {
+      if (
+        !e.target.closest('.search-bar') &&
+        !e.target.closest('.main-searched-content-container')
+      ) {
+        setFetchedSearchData([]);
+        window.removeEventListener('click', clicked);
+      }
+    });
+  };
+
+  const reOpenSearchedContent = () => {
+    inputRef.current.value && fetchBooksByInputValue(inputRef.current.value);
+  };
+
   return (
     <>
-      <S.Container onClick={ActivateInputForm} width={width} height={height}>
+      <S.Container
+        className="search-bar"
+        onClick={() => {
+          ActivateInputForm();
+          outsideClickHandler();
+          reOpenSearchedContent();
+        }}
+        width={width}
+        height={height}
+      >
         <S.SearchIcon />
         <S.Input
           placeholder="Search"
@@ -53,6 +80,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
               ? fetchBooksByInputValue(e.target.value)
               : setFetchedSearchData([]);
           }}
+          // onFocus={reOpenSearchedContent}
           autoFocus={autoFocus}
         ></S.Input>
         <S.ClearIcon ref={clearIconRef} onClick={clearInputValue} />

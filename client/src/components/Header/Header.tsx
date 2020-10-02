@@ -2,18 +2,35 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import * as S from './HeaderStyle';
 import { SearchBar } from '../SearchBar';
+import { MainSearchedContentContainer } from '../MainSearchedContentContainer';
 
 const Header = () => {
-  const [fetchedSearchData, setFetchedSearchData] = useState([]);
+  const [fetchedSearchData, setFetchedSearchData] = useState<any>([]);
+
+  const closeMainSearchedContentContainer = (e: any) => {
+    setFetchedSearchData(null);
+  };
+
   return (
     <S.MainContainer>
       <S.Container>
-        <S.Logo>지식의계보</S.Logo>
-        <SearchBar
-          width="300px"
-          height="34px"
-          setFetchedSearchData={setFetchedSearchData}
-        />
+        <Link href="/">
+          <S.Logo>지식의계보</S.Logo>
+        </Link>
+        <S.SearchBarContainer>
+          <SearchBar
+            width="300px"
+            height="34px"
+            fetchedSearchData={fetchedSearchData}
+            setFetchedSearchData={setFetchedSearchData}
+          />
+          {fetchedSearchData && (
+            <MainSearchedContentContainer
+              fetchedSearchData={fetchedSearchData}
+              setFetchedSearchData={setFetchedSearchData}
+            />
+          )}
+        </S.SearchBarContainer>
         <S.IconContainer>
           <Link href="/feed">
             <S.SignalWifi4BarIcon />

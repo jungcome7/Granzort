@@ -28,6 +28,7 @@ const BookSearchModal: React.FC<BookSearchModalProps> = ({
             width="600px"
             height="34px"
             autoFocus={true}
+            fetchedSearchData={fetchedSearchData}
             setFetchedSearchData={setFetchedSearchData}
           />
         </S.SearchBarContainer>
@@ -37,6 +38,10 @@ const BookSearchModal: React.FC<BookSearchModalProps> = ({
               <SearchedContent
                 key={data.isbn + Math.random()}
                 {...data}
+                bookWidth="120px"
+                bookHeight="173.99px"
+                titleFontSize="20px"
+                contentFontSize="16px"
                 setDisplaySearchModal={setDisplaySearchModal}
                 setSelectedBook={setSelectedBook}
               />

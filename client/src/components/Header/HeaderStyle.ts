@@ -16,6 +16,9 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
+export const SearchBarContainer = styled.div`
+`;
+
 export const Logo = styled.p`
   display: grid;
   align-items: center;

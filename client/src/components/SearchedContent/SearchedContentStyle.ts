@@ -15,23 +15,29 @@ export const Container = styled.div`
   background-color: ${$GRAY_000};
   border-radius: 10px;
   cursor: pointer;
-  user-select:none;
+  user-select: none;
   &:hover {
     background-color: ${$GRAY_001};
     box-shadow: 2px 2px 5px ${$GRAY_004};
   }
 `;
 
-export const BookImg = styled.img`
-  width: 120px;
-  height: 173.99px;
+interface BookImgProps {
+  bookWidth: string;
+  bookHeight: string;
+}
+export const BookImg = styled.img<BookImgProps>`
+  /* width: 120px;
+  height: 173.99px; */
+  width: ${(props) => props.bookWidth};
+  height: ${(props) => props.bookHeight};
   border-radius: 10px;
   box-shadow: 2px 2px 5px ${$GRAY_004};
 `;
 
-export const EmptyBookImg = styled.div`
-  width: 120px;
-  height: 173.99px;
+export const EmptyBookImg = styled.div<BookImgProps>`
+  width: ${(props) => props.bookWidth};
+  height: ${(props) => props.bookHeight};
   border-radius: 10px;
   background-color: ${$GRAY_001};
   box-shadow: 2px 2px 5px ${$GRAY_004};
@@ -50,11 +56,27 @@ export const BookInfo = styled.div`
     margin: 5px;
   }
 `;
-export const Title = styled.p`
-  font-size: 20px;
+interface TitleProps {
+  titleFontSize: string;
+}
+
+interface ContentProps {
+  contentFontSize: string;
+}
+
+export const Title = styled.p<TitleProps>`
+  font-size: ${(props) => props.titleFontSize};
   font-weight: 600;
 `;
-export const Authors = styled.p``;
-export const Translators = styled.p``;
-export const Publisher = styled.p``;
-export const PublishedDate = styled.p``;
+export const Authors = styled.p<ContentProps>`
+  font-size: ${(props) => props.contentFontSize};
+`;
+export const Translators = styled.p<ContentProps>`
+  font-size: ${(props) => props.contentFontSize};
+`;
+export const Publisher = styled.p<ContentProps>`
+  font-size: ${(props) => props.contentFontSize};
+`;
+export const PublishedDate = styled.p<ContentProps>`
+  font-size: ${(props) => props.contentFontSize};
+`;
