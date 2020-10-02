@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   flex: 0.5;
   padding: 10px 0;
+  max-height: 400px;
 
   & p {
       margin: 10px 0;
@@ -42,4 +43,10 @@ export const Price = styled.p`
 export const SalesPrice = styled.p`
   font-size: 20px;
   font-weight: 550;
+`;
+
+export const Contents = styled.p`
+  font-size: 14px;
+  font-weight: 550;
+  line-height:18px;
 `;

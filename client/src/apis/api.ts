@@ -1,4 +1,4 @@
-import { MainCategory, SubCategory, Book, Review, Quote } from '../../types/';
+import { MainCategory, SubCategory, Book, Review, Quote } from '../../../types/';
 
 const API_END_POINT = 3001;
 

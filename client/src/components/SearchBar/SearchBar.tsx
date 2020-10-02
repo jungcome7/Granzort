@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import * as S from './SearchBarStyle';
-import { fetchBooks } from '../../../apis/search';
+import { fetchBooks } from '../../apis/search';
 
 interface SearchBarProps {
   width: string;

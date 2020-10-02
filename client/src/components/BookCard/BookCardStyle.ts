@@ -3,7 +3,7 @@ import {
   $GRAY_001,
   $GRAY_002,
   $GRAY_006,
-  $GRAY_009,
+  $GRAY_008,
   $BLACK,
 } from '../../styles/color-variables';
 import FindReplace from '@material-ui/icons/FindReplace';
@@ -22,7 +22,9 @@ export const Container = styled.div`
   justify-self: center;
   justify-content: center;
   align-items: center;
-
+  &:hover {
+  background-color: ${$GRAY_002};
+  }
 `;
 
 export const Img = styled.img`
@@ -44,6 +46,6 @@ export const FindReplaceIcon = styled(FindReplace)`
   position: absolute;
   display: flex;
   align-self: center;
-  color: ${$GRAY_009};
+  color: ${$GRAY_008};
   opacity:1;
 `;

@@ -4,6 +4,7 @@ import {
   $GRAY_001,
   $GRAY_002,
   $GRAY_006,
+  $GRAY_008,
 } from '../../styles/color-variables';
 import AddCircleOutline from '@material-ui/icons/AddCircleOutline';
 
@@ -30,7 +31,7 @@ export const Container = styled.div`
   &:last-child {
     color: ${$GRAY_006};
     &:hover {
-      color: ${$BLACK};
+      color: ${$GRAY_008};
     }
   }
 `;

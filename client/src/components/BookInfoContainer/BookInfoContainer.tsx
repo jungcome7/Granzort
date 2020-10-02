@@ -10,7 +10,7 @@ interface BookInfoContainerProps {
     thumbnail: string;
     title: string;
     authors: string[];
-    translators?: string[];
+    translators: string[];
     publisher: string;
     datetime: string;
     contents: string;
