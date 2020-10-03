@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Search from '@material-ui/icons/Search';
 import Clear from '@material-ui/icons/Clear';
-import { $GRAY_001, $GRAY_006, $GRAY_008 } from '../../styles/color-variables';
+import { $GRAY_000, $GRAY_001, $GRAY_006, $GRAY_008 } from '../../styles/color-variables';
 
 interface ContainerProps {
   width:string;
@@ -14,7 +14,7 @@ export const Container = styled.div<ContainerProps>`
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
-  background-color: ${$GRAY_001};
+  background-color: ${$GRAY_000};
   display: flex;
   justify-content: center;
   cursor: text;

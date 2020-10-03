@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {
+  $WHITE,
   $GRAY_000,
   $GRAY_001,
   $GRAY_002,
@@ -12,12 +13,12 @@ export const Container = styled.div`
   display: flex;
   margin: 10px;
   padding: 10px;
-  background-color: ${$GRAY_000};
+  background-color: ${$WHITE};
   border-radius: 10px;
   cursor: pointer;
   user-select: none;
   &:hover {
-    background-color: ${$GRAY_001};
+    background-color: ${$GRAY_000};
     box-shadow: 2px 2px 5px ${$GRAY_004};
   }
 `;
