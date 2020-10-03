@@ -38,8 +38,6 @@ export const Img = styled.img`
 `;
 export const MenuBookIcon = styled(MenuBook)`
   color: ${$GRAY_006};
-  /* z-index:1;
-  background-color: ${$GRAY_001}; */
 `;
 
 export const FindReplaceIcon = styled(FindReplace)`

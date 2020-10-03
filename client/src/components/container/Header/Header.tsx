@@ -3,11 +3,12 @@ import Link from 'next/link';
 import * as S from './HeaderStyle';
 import { SearchBar } from '../../component/SearchBar';
 import { MainSearchedContentContainer } from '../MainSearchedContentContainer';
+import { Book } from '../../../../../types/book';
 
 interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = ({}: HeaderProps) => {
-  const [fetchedSearchData, setFetchedSearchData] = useState<any>([]);
+  const [fetchedSearchData, setFetchedSearchData] = useState<Book[]>([]);
 
   return (
     <S.MainContainer>

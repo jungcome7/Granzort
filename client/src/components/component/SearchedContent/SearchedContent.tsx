@@ -8,7 +8,7 @@ interface SearchedContentProps extends Book {
   titleFontSize: string;
   contentFontSize: string;
   setDisplaySearchModal?: (displaySearchModal: boolean) => void;
-  setSelectedBook?: (a: any) => void;
+  setSelectedBook?: (book: Book) => void;
 }
 
 const SearchedContent: React.FC<SearchedContentProps> = ({

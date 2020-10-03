@@ -7,7 +7,7 @@ import { Book } from '../../../../../types/book';
 
 interface BookInfoContainerProps {
   openSearchModal: () => void;
-  selectedBook?: Book
+  selectedBook?: Book;
 }
 
 const BookInfoContainer: React.FC<BookInfoContainerProps> = ({

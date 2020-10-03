@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import * as S from './MainSearchedContentContainerStyle';
 import { SearchedContent } from '../../component/SearchedContent';
+import { Book } from '../../../../../types/book';
 
 interface MainSearchedContentContainerProps {
-  setFetchedSearchData: (a: any) => void;
-  fetchedSearchData: any;
+  setFetchedSearchData: (fetchedSearchData: Book[]) => void;
+  fetchedSearchData: Book[];
 }
 
 const MainSearchedContentContainer: React.FC<MainSearchedContentContainerProps> = ({
@@ -15,7 +16,7 @@ const MainSearchedContentContainer: React.FC<MainSearchedContentContainerProps> 
   return (
     <S.Container className="main-searched-content-container">
       {fetchedSearchData &&
-        fetchedSearchData.map((data: any) => (
+        fetchedSearchData.map((data: Book) => (
           <SearchedContent
             key={data.isbn + Math.random()}
             {...data}
