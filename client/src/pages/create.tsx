@@ -5,6 +5,7 @@ import { EmptyBookCard } from '../components/EmptyBookCard';
 import { ContentLayout } from '../components/ContentLayout';
 import { BookInfoContainer } from '../components/BookInfoContainer';
 import { BookSearchModal } from '../components/BookSearchModal';
+import { ReviewAndQuoteContainer } from '../components/ReviewAndQuoteContainer';
 
 const createPage: React.FC = () => {
   const [displaySearchModal, setDisplaySearchModal] = useState(false);
@@ -24,7 +25,11 @@ const createPage: React.FC = () => {
       )}
       <Header />
       <ContentLayout>
-        <BookInfoContainer openSearchModal={openSearchModal} selectedBook={selectedBook}/>
+        <BookInfoContainer
+          openSearchModal={openSearchModal}
+          selectedBook={selectedBook}
+        />
+        <ReviewAndQuoteContainer />
       </ContentLayout>
     </>
   );
