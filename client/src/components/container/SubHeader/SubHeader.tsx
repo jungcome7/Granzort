@@ -4,9 +4,9 @@ import * as S from './SubHeaderStyle';
 import { Button } from '../../component/Button';
 import { CategoryTab } from '../../component/CategoryTab';
 
-interface Props {}
+interface SubHeaderProps {}
 
-const SubHeader: React.FC<Props> = ({}: Props) => {
+const SubHeader: React.FC<SubHeaderProps> = ({}: SubHeaderProps) => {
   return (
     <S.Container>
       <Link href="/create">

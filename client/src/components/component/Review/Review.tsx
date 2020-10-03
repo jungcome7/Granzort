@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './ReviewStyle';
 
-interface Props {}
+interface ReviewProps {}
 
-const Review: React.FC<Props> = ({}: Props) => {
+const Review: React.FC<ReviewProps> = ({}: ReviewProps) => {
   return (
     <S.Container>
       <S.Review>

@@ -4,12 +4,10 @@ import * as S from './HeaderStyle';
 import { SearchBar } from '../../component/SearchBar';
 import { MainSearchedContentContainer } from '../MainSearchedContentContainer';
 
-const Header = () => {
-  const [fetchedSearchData, setFetchedSearchData] = useState<any>([]);
+interface HeaderProps {}
 
-  const closeMainSearchedContentContainer = (e: any) => {
-    setFetchedSearchData(null);
-  };
+const Header: React.FC<HeaderProps> = ({}: HeaderProps) => {
+  const [fetchedSearchData, setFetchedSearchData] = useState<any>([]);
 
   return (
     <S.MainContainer>

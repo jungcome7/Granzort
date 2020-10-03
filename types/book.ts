@@ -1,8 +1,12 @@
 export interface Book {
-    id:number;
-    title:string;
-    author:string;
-    press:string;
-    page:number | null;
-    sub_category_id:number;
+  thumbnail: string;
+  title: string;
+  authors: string[];
+  translators: string[];
+  publisher: string;
+  datetime: string;
+  contents: string;
+  isbn: string;
+  price: number;
+  sale_price: number;
 }

@@ -1,22 +1,12 @@
 import React, { useRef, useState } from 'react';
 import * as S from './CategoryTabStyle';
 
-interface Props {}
+interface CategoryTabProps {}
 
-const CategoryTab: React.FC<Props> = ({}: Props) => {
+const CategoryTab: React.FC<CategoryTabProps> = ({}: CategoryTabProps) => {
   const categoryListRef = useRef<any>();
 
-  // const outsideClickHandler = () => {
-  //   window.addEventListener('click', (e: any) => {
-  //     if (!e.target.closest('.category-tab')) {
-  //       categoryListRef.current.style.display = 'none';
-  //       console.log(1)
-  //     }
-  //   });
-  // };
-
   const toggleCategoryList = () => {
-    // outsideClickHandler();
     categoryListRef.current.style.display === 'none' ||
     categoryListRef.current.style.display === ''
       ? (categoryListRef.current.style.display = 'block')

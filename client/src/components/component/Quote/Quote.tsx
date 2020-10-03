@@ -1,9 +1,9 @@
 import React from 'react';
 import * as S from './QuoteStyle';
 
-interface Props {}
+interface QuoteProps {}
 
-const Quote: React.FC<Props> = ({}: Props) => {
+const Quote: React.FC<QuoteProps> = ({}: QuoteProps) => {
   return (
     <S.Container>
       <S.Quote>

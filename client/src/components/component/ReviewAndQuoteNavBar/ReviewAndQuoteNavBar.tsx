@@ -34,7 +34,7 @@ const ReviewAndQuoteNavBar: React.FC<ReviewAndQuoteNavBarProps> = ({
   return (
     <S.Container>
       <S.ReviewBar
-      className="navbar"
+        className="navbar"
         onClick={(e) => {
           quotePage && displayReviewPage(e);
         }}

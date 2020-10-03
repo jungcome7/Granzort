@@ -1,19 +1,8 @@
 import React from 'react';
 import * as S from './SearchedContentStyle';
+import { Book } from '../../../../../types/book';
 
-interface SearchedContentProps {
-  thumbnail: string;
-  title: string;
-  authors: string[];
-  translators?: string[];
-  publisher: string;
-  datetime: string;
-  contents: string;
-  isbn: string;
-  price: number;
-  sales_price: number;
-  status: string;
-  url: string;
+interface SearchedContentProps extends Book {
   bookWidth: string;
   bookHeight: string;
   titleFontSize: string;
@@ -31,12 +20,12 @@ const SearchedContent: React.FC<SearchedContentProps> = ({
   contentFontSize,
   ...data
 }: SearchedContentProps) => {
+  const { thumbnail, title, authors, translators, publisher, datetime } = data;
+
   const selectBook = () => {
     setDisplaySearchModal && setDisplaySearchModal(false);
     setSelectedBook && setSelectedBook(data);
   };
-
-  const { thumbnail, title, authors, translators, publisher, datetime } = data;
 
   return (
     <S.Container onClick={selectBook}>

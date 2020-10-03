@@ -1,21 +1,11 @@
 import React from 'react';
 import * as S from './BookInfoStyle';
 import { putCommas } from '../../../utils/parsers';
+import { Book } from '../../../../../types/book';
 
-interface Props {
-  thumbnail: string;
-  title: string;
-  authors: string[];
-  translators: string[];
-  publisher: string;
-  datetime: string;
-  contents: string;
-  isbn: string;
-  price: number;
-  sale_price: number;
-}
+interface BookInfoProps extends Book {}
 
-const BookInfo: React.FC<Props> = ({
+const BookInfo: React.FC<BookInfoProps> = ({
   title,
   authors,
   translators,
@@ -24,7 +14,7 @@ const BookInfo: React.FC<Props> = ({
   price,
   sale_price,
   contents,
-}: Props) => {
+}: BookInfoProps) => {
   return (
     <S.Container>
       <S.Title>{title}</S.Title>

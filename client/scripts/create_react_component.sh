@@ -26,10 +26,12 @@ interface Props {
 
 }
 
-const ${FILE_NAME}: React.FC<Props> = ({} : Props) => {
+const ${FILE_NAME}: React.FC<${FILE_NAME}Props> = ({} : ${FILE_NAME}Props) => {
 
 	return (
-    <S.Container>${FILE_NAME}</S.Container>
+        <S.Container>
+            ${FILE_NAME}
+        </S.Container>
     );
 };
 

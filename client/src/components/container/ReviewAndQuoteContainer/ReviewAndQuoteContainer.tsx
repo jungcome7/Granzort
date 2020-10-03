@@ -4,9 +4,9 @@ import { Quote } from '../../component/Quote';
 import { ReviewAndQuoteNavBar } from '../../component/ReviewAndQuoteNavBar';
 import * as S from './ReviewAndQuoteContainerStyle';
 
-interface Props {}
+interface ReviewAndQuoteContainerProps {}
 
-const ReviewAndQuoteContainer: React.FC<Props> = ({}: Props) => {
+const ReviewAndQuoteContainer: React.FC<ReviewAndQuoteContainerProps> = ({}: ReviewAndQuoteContainerProps) => {
   const [quotePage, setQuotePage] = useState(false);
   const [reviewPage, setReviewPage] = useState(true);
 

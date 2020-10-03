@@ -1,12 +1,11 @@
 import React from 'react';
 import * as S from './BookCardContainerStyle';
-import { BookCard } from '../../component/BookCard';
 
-interface Props {
+interface BookCardContainerProps {
 
 }
 
-const BookCardContainer: React.FC = () => {
+const BookCardContainer: React.FC<BookCardContainerProps> = ({}:BookCardContainerProps) => {
   return (
     <S.Container>
     </S.Container>
