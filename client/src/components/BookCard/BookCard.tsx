@@ -13,7 +13,7 @@ const BookCard: React.FC<BookCardProps> = ({
   const MenuBookIconRef = useRef<any>();
   const FindReplaceIconRef = useRef<any>();
 
-  const mouseEnterHandler = () => {
+  const mouseOverHandler = () => {
     FindReplaceIconRef.current.style.opacity = 1;
     if (!thumbnail) MenuBookIconRef.current.style.visibility = 'hidden';
   };
@@ -26,7 +26,7 @@ const BookCard: React.FC<BookCardProps> = ({
   return (
     <S.Container
       onClick={openSearchModal}
-      onMouseEnter={mouseEnterHandler}
+      onMouseOver={mouseOverHandler}
       onMouseLeave={mouseLeaveHandler}
     >
       {thumbnail ? (

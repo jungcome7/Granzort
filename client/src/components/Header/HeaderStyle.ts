@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import BarChart from '@material-ui/icons/BarChart';
 import SignalWifi4Bar from '@material-ui/icons/SignalWifi4Bar';
 import Person from '@material-ui/icons/Person';
-import { $BLACK } from '../../styles/color-variables';
+import { $BLACK, $GRAY_003 } from '../../styles/color-variables';
 
 export const MainContainer = styled.div`
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid ${$GRAY_003};
 `;
 
 export const Container = styled.div`
@@ -16,8 +16,7 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
-export const SearchBarContainer = styled.div`
-`;
+export const SearchBarContainer = styled.div``;
 
 export const Logo = styled.p`
   display: grid;
