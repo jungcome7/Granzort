@@ -1,9 +1,7 @@
 export interface Review {
   id: number;
-  content: string;
-  read_date: string;
-  star: number;
+  review: string;
   created_at: string;
   updated_at: string;
-  book_id: number;
+  read_book_id: number;
 }
