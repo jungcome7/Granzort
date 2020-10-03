@@ -1,8 +1,9 @@
+import { AnyCnameRecord } from 'dns';
 import { createGlobalStyle } from 'styled-components';
+import { GlobalStyleComponent, DefaultTheme } from 'styled-components';
 import reset from 'styled-reset';
-import { $BLACK } from '../styles/color-variables';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle:GlobalStyleComponent<any, DefaultTheme> = createGlobalStyle`
 ${reset}
 * {
     margin: 0px;

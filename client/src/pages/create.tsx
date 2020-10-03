@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Header } from '../components/container/Header';
-import { SubHeader } from '../components/container/SubHeader';
-import { EmptyBookCard } from '../components/component/EmptyBookCard';
 import { ContentLayout } from '../components/layout/ContentLayout';
 import { BookInfoContainer } from '../components/container/BookInfoContainer';
 import { BookSearchModal } from '../components/modal/BookSearchModal';
 import { ReviewAndQuoteContainer } from '../components/container/ReviewAndQuoteContainer';
+import { Book } from '../../../types/book';
 
-const createPage: React.FC = () => {
+const createPage = () => {
   const [displaySearchModal, setDisplaySearchModal] = useState(false);
-  const [selectedBook, setSelectedBook] = useState();
+  const [selectedBook, setSelectedBook] = useState<Book>();
 
   const openSearchModal = () => {
     setDisplaySearchModal(true);

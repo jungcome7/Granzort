@@ -17,14 +17,14 @@ const ReviewAndQuoteNavBar: React.FC<ReviewAndQuoteNavBarProps> = ({
 }: ReviewAndQuoteNavBarProps) => {
   const reviewBarRef = useRef<any>();
   const quoteBarRef = useRef<any>();
-  const displayReviewPage = (e: any) => {
+  const displayReviewPage = () => {
     setQuotePage(false);
     setReviewPage(true);
     reviewBarRef.current.style.backgroundColor = $GRAY_001;
     quoteBarRef.current.style.backgroundColor = $WHITE;
   };
 
-  const displayQuotePage = (e: any) => {
+  const displayQuotePage = () => {
     setReviewPage(false);
     setQuotePage(true);
     reviewBarRef.current.style.backgroundColor = $WHITE;
@@ -34,17 +34,16 @@ const ReviewAndQuoteNavBar: React.FC<ReviewAndQuoteNavBarProps> = ({
   return (
     <S.Container>
       <S.ReviewBar
-        className="navbar"
-        onClick={(e) => {
-          quotePage && displayReviewPage(e);
+        onClick={() => {
+          quotePage && displayReviewPage();
         }}
         ref={reviewBarRef}
       >
         <S.BorderColorIcon />
       </S.ReviewBar>
       <S.QuoteBar
-        onClick={(e) => {
-          reviewPage && displayQuotePage(e);
+        onClick={() => {
+          reviewPage && displayQuotePage();
         }}
         ref={quoteBarRef}
       >

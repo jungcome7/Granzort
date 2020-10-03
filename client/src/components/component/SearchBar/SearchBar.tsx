@@ -1,13 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React, { MouseEvent, useRef, useState } from 'react';
 import * as S from './SearchBarStyle';
 import { fetchBooks } from '../../../apis/search';
+import { Book } from '../../../../../types/book';
 
 interface SearchBarProps {
   width: string;
   height: string;
   autoFocus?: boolean;
-  fetchedSearchData: any;
-  setFetchedSearchData: (fetchedData: any) => void;
+  fetchedSearchData: Book[];
+  setFetchedSearchData: (fetchedData: Book[]) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -20,7 +21,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const inputRef = useRef<any>();
   const clearIconRef = useRef<any>();
 
-  const fetchBooksByInputValue = async (inputValue: any) => {
+  const fetchBooksByInputValue = async (inputValue: string) => {
     const data = await fetchBooks(inputValue);
     setFetchedSearchData(data.documents);
     console.log(data.documents);
@@ -43,10 +44,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   const outsideClickHandler = () => {
-    window.addEventListener('click', function clicked(e: any) {
+    window.addEventListener('click', function clicked(e: Event) {
       if (
-        !e.target.closest('.search-bar') &&
-        !e.target.closest('.main-searched-content-container')
+        !(e.target as HTMLElement).closest('.search-bar') &&
+        !(e.target as HTMLElement).closest('.main-searched-content-container')
       ) {
         setFetchedSearchData([]);
         window.removeEventListener('click', clicked);
@@ -74,13 +75,12 @@ const SearchBar: React.FC<SearchBarProps> = ({
         <S.Input
           placeholder="Search"
           ref={inputRef}
-          onChange={(e: any) => {
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             toggleClearButton();
             e.target.value
               ? fetchBooksByInputValue(e.target.value)
               : setFetchedSearchData([]);
           }}
-          // onFocus={reOpenSearchedContent}
           autoFocus={autoFocus}
         ></S.Input>
         <S.ClearIcon ref={clearIconRef} onClick={clearInputValue} />

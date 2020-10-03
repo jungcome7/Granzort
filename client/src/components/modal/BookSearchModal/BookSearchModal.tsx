@@ -2,20 +2,21 @@ import React, { useState } from 'react';
 import * as S from './BookSearchModalStyle';
 import { SearchBar } from '../../component/SearchBar';
 import { SearchedContent } from '../../component/SearchedContent';
+import { Book } from '../../../../../types/book';
 
 interface BookSearchModalProps {
-  setDisplaySearchModal: (display: boolean) => void;
-  setSelectedBook: (book: any) => any;
+  setDisplaySearchModal: (displaySearchedModal: boolean) => void;
+  setSelectedBook: (book: Book) => void;
 }
 
 const BookSearchModal: React.FC<BookSearchModalProps> = ({
   setDisplaySearchModal,
   setSelectedBook,
 }: BookSearchModalProps) => {
-  const [fetchedSearchData, setFetchedSearchData] = useState<any>([]);
+  const [fetchedSearchData, setFetchedSearchData] = useState<Book[]>([]);
 
-  const outsideClickHandler = (e: any) => {
-    if (!e.target.closest('.modal-content')) {
+  const outsideClickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!(e.target as HTMLElement).closest('.modal-content')) {
       setDisplaySearchModal(false);
     }
   };
@@ -34,7 +35,7 @@ const BookSearchModal: React.FC<BookSearchModalProps> = ({
         </S.SearchBarContainer>
         <S.SearchedContentContainer>
           {fetchedSearchData &&
-            fetchedSearchData.map((data: any) => (
+            fetchedSearchData.map((data: Book) => (
               <SearchedContent
                 key={data.isbn + Math.random()}
                 {...data}
