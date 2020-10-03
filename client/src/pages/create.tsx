@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Header } from '../components/Header';
-import { SubHeader } from '../components/SubHeader';
-import { EmptyBookCard } from '../components/EmptyBookCard';
-import { ContentLayout } from '../components/ContentLayout';
-import { BookInfoContainer } from '../components/BookInfoContainer';
-import { BookSearchModal } from '../components/BookSearchModal';
-import { ReviewAndQuoteContainer } from '../components/ReviewAndQuoteContainer';
+import { Header } from '../components/container/Header';
+import { SubHeader } from '../components/container/SubHeader';
+import { EmptyBookCard } from '../components/component/EmptyBookCard';
+import { ContentLayout } from '../components/layout/ContentLayout';
+import { BookInfoContainer } from '../components/container/BookInfoContainer';
+import { BookSearchModal } from '../components/modal/BookSearchModal';
+import { ReviewAndQuoteContainer } from '../components/container/ReviewAndQuoteContainer';
 
 const createPage: React.FC = () => {
   const [displaySearchModal, setDisplaySearchModal] = useState(false);
