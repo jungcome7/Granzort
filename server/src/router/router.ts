@@ -32,11 +32,11 @@ router.put('/book/:bookId', updateBook);
 router.delete('/book/:bookId', deleteBook);
 
 router.get('/reviews', getAllReviews);
-// router.get('/book/:bookId/review', getReviewByBookId);
-// router.get('/book/:bookId/review/:reviewId', getReviewByReviewId);
-// router.post('/book/:bookId/review', addReview);
-// router.put('/book/:bookId/review/:reviewId', updateReview);
-// router.delete('/book/:bookId/review/:reviewId', deleteReview);
+router.get('/book/:bookId/review', getReviewByBookId);
+router.get('/book/:bookId/review/:reviewId', getReviewByReviewId);
+router.post('/book/:bookId/review', addReview);
+router.put('/book/:bookId/review/:reviewId', updateReview);
+router.delete('/book/:bookId/review/:reviewId', deleteReview);
 
 router.get('/quotes', getAllQuotes);  
 // router.get('/book/:bookId/quotes', getQuotesByBookId);

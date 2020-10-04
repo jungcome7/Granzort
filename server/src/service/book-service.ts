@@ -8,7 +8,7 @@ export const getAllBooks = async (req: Request, res: Response) => {
 
 export const getBookByBookId = async (req: Request, res: Response) => {
   const bookId = req.params.bookId
-  const book = await BookRepository.getById(bookId);
+  const book = await BookRepository.getByBookId(bookId);
   res.json(book);
 };
 

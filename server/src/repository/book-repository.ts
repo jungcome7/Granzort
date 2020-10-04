@@ -16,7 +16,7 @@ export class BookRepository {
     return result[0];
   }
 
-  static async getById(bookId) {
+  static async getByBookId(bookId) {
     const connection = await pool.getConnection();
     const result = await connection.query(`
   SELECT * FROM book WHERE id = ${bookId};`);
