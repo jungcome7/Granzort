@@ -1,4 +1,4 @@
-import { getAll, getByMainCategoryId } from '../model/sub-category';
+import { getAll, getByMainCategoryId } from '../repository/sub-category';
 import { Request, Response } from 'express';
 
 export const getAllSubCategories = async (req: Request, res: Response) => {

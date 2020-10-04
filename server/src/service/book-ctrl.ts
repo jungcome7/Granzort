@@ -1,4 +1,4 @@
-import { getAll, getByMainCategoryId, getBySubCategoryId } from '../model/book';
+import { getAll, getByMainCategoryId, getBySubCategoryId } from '../repository/book-repository';
 import { Request, Response } from 'express';
 
 export const getAllBooks = async (req: Request, res: Response) => {

@@ -1,4 +1,4 @@
-import { getByBookId } from '../model/quote';
+import { getByBookId } from '../repository/quote-repository';
 import { Request, Response } from 'express';
 
 export const getQuotesByBookId = async (req: Request, res: Response) => {
