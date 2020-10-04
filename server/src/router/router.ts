@@ -39,10 +39,10 @@ router.put('/book/:bookId/review/:reviewId', updateReview);
 router.delete('/book/:bookId/review/:reviewId', deleteReview);
 
 router.get('/quotes', getAllQuotes);  
-// router.get('/book/:bookId/quotes', getQuotesByBookId);
-// router.get('/book/:bookId/quote/:quoteId', getQuoteByQuoteId);
-// router.post('/book/:bookId/quote', addQuote);
-// router.put('/book/:bookId/quote/:quoteId', updateQuote);
-// router.delete('/book/:bookId/quote/:quoteId', deleteQuote);
+router.get('/book/:bookId/quotes', getQuotesByBookId);
+router.get('/book/:bookId/quote/:quoteId', getQuoteByQuoteId);
+router.post('/book/:bookId/quote', addQuote);
+router.put('/book/:bookId/quote/:quoteId', updateQuote);
+router.delete('/book/:bookId/quote/:quoteId', deleteQuote);
 
 export default router;

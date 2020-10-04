@@ -1,17 +1,9 @@
 import pool from '../db/connection';
 
-// export const getAll = async () => {
-//   const connection = await pool.getConnection();
-//   const result = await connection.query('SELECT * FROM book');
-//   connection.release();
-//   return result;
-// };
-
 export class BookRepository {
   static async getAll() {
     const connection = await pool.getConnection();
-    const getAllQuery = `SELECT * FROM book`;
-    const result = await connection.query(getAllQuery);
+    const result = await connection.query(`SELECT * FROM book`);
     connection.release();
     return result[0];
   }
