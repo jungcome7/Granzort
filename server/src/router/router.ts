@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import {
   getAllBooks,
-  getBookById,
+  getBookByBookId,
   addBook,
   updateBook,
   deleteBook,
@@ -26,10 +26,10 @@ import {
 const router = Router();
 
 router.get('/books', getAllBooks);
-// router.get('/book/:bookId', getBookById);
-// router.post('/book', addBook);
-// router.put('/book/:bookId', updateBook);
-// router.delete('/book/:bookId', deleteBook);
+router.get('/book/:bookId', getBookByBookId);
+router.post('/book', addBook);
+router.put('/book/:bookId', updateBook);
+router.delete('/book/:bookId', deleteBook);
 
 router.get('/reviews', getAllReviews);
 // router.get('/book/:bookId/review', getReviewByBookId);
