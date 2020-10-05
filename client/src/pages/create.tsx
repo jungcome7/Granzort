@@ -5,6 +5,7 @@ import { BookInfoContainer } from '../components/container/BookInfoContainer';
 import { BookSearchModal } from '../components/modal/BookSearchModal';
 import { ReviewAndQuoteContainer } from '../components/container/ReviewAndQuoteContainer';
 import { Book } from '../../../types/book';
+import { FetchedSearchDataContextProvider } from '../contexts/MyContext';
 
 const createPage = () => {
   const [displaySearchModal, setDisplaySearchModal] = useState(false);
@@ -16,20 +17,22 @@ const createPage = () => {
 
   return (
     <>
-      {displaySearchModal && (
-        <BookSearchModal
-          setDisplaySearchModal={setDisplaySearchModal}
-          setSelectedBook={setSelectedBook}
-        />
-      )}
-      <Header />
-      <ContentLayout>
-        <BookInfoContainer
-          openSearchModal={openSearchModal}
-          selectedBook={selectedBook}
-        />
-        <ReviewAndQuoteContainer />
-      </ContentLayout>
+      <FetchedSearchDataContextProvider>
+        {displaySearchModal && (
+          <BookSearchModal
+            setDisplaySearchModal={setDisplaySearchModal}
+            setSelectedBook={setSelectedBook}
+          />
+        )}
+        <Header />
+        <ContentLayout>
+          <BookInfoContainer
+            openSearchModal={openSearchModal}
+            selectedBook={selectedBook}
+          />
+          <ReviewAndQuoteContainer />
+        </ContentLayout>
+      </FetchedSearchDataContextProvider>
     </>
   );
 };

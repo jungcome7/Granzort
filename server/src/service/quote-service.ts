@@ -13,7 +13,7 @@ export const getQuotesByBookId = async (req: Request, res: Response) => {
 };
 
 export const getQuoteByQuoteId = async (req: Request, res: Response) => {
-  const quoteId = req.params.QuoteId;
+  const quoteId = req.params.quoteId;
   const quote = await QuoteRepository.getByQuoteId(quoteId);
   res.json(quote);
 };

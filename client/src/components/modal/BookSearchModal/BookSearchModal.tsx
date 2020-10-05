@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import * as S from './BookSearchModalStyle';
 import { SearchBar } from '../../component/SearchBar';
 import { SearchedContent } from '../../component/SearchedContent';
 import { Book } from '../../../../../types/book';
+import {
+  useFetchedSearchDataState,
+  useFetchedSearchDataDispatch,
+} from '../../../contexts/MyContext';
 
 interface BookSearchModalProps {
   setDisplaySearchModal: (displaySearchedModal: boolean) => void;
@@ -13,9 +17,14 @@ const BookSearchModal: React.FC<BookSearchModalProps> = ({
   setDisplaySearchModal,
   setSelectedBook,
 }: BookSearchModalProps) => {
-  const [fetchedSearchData, setFetchedSearchData] = useState<Book[]>([]);
+  // const [fetchedSearchData, setFetchedSearchData] = useState<Book[]>([]);
+  // const { fetchedSearchData, setFetchedSearchData } = useContext(GlobalContext);
+  const fetchedSearchData = useFetchedSearchDataState();
+  const setData = useFetchedSearchDataDispatch();
 
-  const outsideClickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const outsideClickHandler = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     if (!(e.target as HTMLElement).closest('.modal-content')) {
       setDisplaySearchModal(false);
     }
@@ -30,7 +39,7 @@ const BookSearchModal: React.FC<BookSearchModalProps> = ({
             height="34px"
             autoFocus={true}
             fetchedSearchData={fetchedSearchData}
-            setFetchedSearchData={setFetchedSearchData}
+            setFetchedSearchData={setData}
           />
         </S.SearchBarContainer>
         <S.SearchedContentContainer>
