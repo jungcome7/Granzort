@@ -1,6 +1,12 @@
 import React, { createContext, Dispatch, useReducer, useContext } from 'react';
 import { Book } from '../../../types';
 
+// 관리대상
+// 1. fetchedSearchData
+// 2. selectedSearchedData
+// 3. displaySearchModal
+// * 변수명 좀 바꾸자
+
 type fetchedSearchDataState = Book[];
 
 const FetchedSearchDataStateContext = createContext<
