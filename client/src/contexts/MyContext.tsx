@@ -6,6 +6,8 @@ import { Book } from '../../../types';
 // 2. selectedSearchedData
 // 3. displaySearchModal
 // * 변수명 좀 바꾸자
+// * React.FC 제거
+// * typecheck
 
 type fetchedSearchDataState = Book[];
 
