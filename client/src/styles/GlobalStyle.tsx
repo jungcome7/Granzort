@@ -10,8 +10,6 @@ ${reset}
     box-sizing: border-box;
   }
   html {
-    /* max-width: 1000px; */
-    /* margin: 0 auto; */
     overflow-y: scroll;
   }
 
